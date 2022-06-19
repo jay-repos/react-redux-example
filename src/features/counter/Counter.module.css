@@ -1,6 +1,11 @@
 .counter {
   background-color: rgba(109, 109, 110, 0.1);
   padding: 20px;
+  margin: 60px;
+}
+
+.header {
+  color: rgb(112, 76, 182);
 }
 
 .row {

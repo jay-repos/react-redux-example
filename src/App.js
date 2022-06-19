@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-//   Navigate,
+  //   Navigate,
 } from 'react-router-dom'
 
 import { Navbar } from './app/Navbar'
@@ -19,16 +19,16 @@ function App() {
       <div className="App">
         <Routes>
           <Route
-            path="/"
-            element={<><AddPostForm/><PostsList/></>}
+            path="react-redux-example/"
+            element={<><AddPostForm /><PostsList /></>}
           />
-          <Route  
-            path = "posts/:postId"
+          <Route
+            path="react-redux-example/posts/:postId"
             element={<SinglePostPage />}
           />
           <Route
-            path = "editPosts/:postId"
-            element={<EditPostForm />} 
+            path="react-redux-example/editPosts/:postId"
+            element={<EditPostForm />}
           />
           {/* <Navigate to="/" /> */}
         </Routes>

@@ -7,9 +7,9 @@ import { selectPostById } from "./postsSlice"
 
 export const SinglePostPage = () => {
     const postId = useParams().postId
-    
+
     const post = useSelector(state => selectPostById(state, postId))
-    
+
     if (!post) {
         return (
             <section>
@@ -24,7 +24,7 @@ export const SinglePostPage = () => {
                 <PostAuthor userId={post.user} />
                 <p className="post-content">{post.content}</p>
                 < ReactionButtons post={post} />
-                <Link to={`/editPosts/${post.id}`} className="button">
+                <Link to={`/react-redux-example/editPosts/${post.id}`} className="button">
                     Edit Post
                 </Link>
             </article>

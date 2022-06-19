@@ -1,9 +1,9 @@
 import React from 'react';
-
+import styles from './Game.module.css'
 
 function Square(props) {
   return (
-    <button className='square' onClick={props.onClick}>
+    <button className={styles.square} onClick={props.onClick}>
       {props.value}
     </button>
   )
@@ -24,17 +24,17 @@ class Board extends React.Component {
   render() {
     return (
       <div>
-        <div className="board-row">
+        <div className={styles.boardRow}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
         </div>
-        <div className="board-row">
+        <div className={styles.boardRow}>
           {this.renderSquare(3)}
           {this.renderSquare(4)}
           {this.renderSquare(5)}
         </div>
-        <div className="board-row">
+        <div className={styles.boardRow}>
           {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}
@@ -99,23 +99,26 @@ export class Game extends React.Component {
 
     let status
     if (winner) {
-      status = 'Winner' + winner
+      status = '👻 Winner: ' + winner + ' 👻'
     }
     else {
       status = 'Next Player: ' + (this.state.xIsNext ? 'X' : 'O')
     }
 
     return (
-      <div className="game">
-        <div className="game-board">
-          <Board
-            squares={current.squares}
-            onClick={(i) => this.handleClick(i)}
-          />
-        </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
+      <div className={styles.container}>
+        <h1 className={styles.header}>Tic-tac-toe</h1>
+        <div className={styles.game}>
+          <div className={styles.gameBoard}>
+            <Board
+              squares={current.squares}
+              onClick={(i) => this.handleClick(i)}
+            />
+          </div>
+          <div className={styles.gameInfo}>
+            <div>{status}</div>
+            <ol>{moves}</ol>
+          </div>
         </div>
       </div>
     );

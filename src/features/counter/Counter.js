@@ -16,6 +16,7 @@ export function Counter() {
 
     return (
         <div className={styles.counter}>
+            <h1 className={styles.header}>Counter</h1>
             <div className={styles.row}>
                 <button
                     className={styles.button}

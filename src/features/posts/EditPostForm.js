@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
@@ -18,18 +18,18 @@ export const EditPostForm = () => {
     const onSavePostClicked = () => {
         if (title && content) {
             dispatch(postUpdated(
-                {id: postId, title: title, content: content}
+                { id: postId, title: title, content: content }
             ))
-            navigate(`/posts/${postId}`)
+            navigate(`/react-redux-example/posts/${postId}`)
         }
     }
 
-    return(
+    return (
         <section>
             <h2>Edit Post</h2>
             <form>
                 <label htmlFor="postTitle">Post title:</label>
-                <input 
+                <input
                     type="text"
                     id="postTitle"
                     name="postTitle"
@@ -38,7 +38,7 @@ export const EditPostForm = () => {
                     onChange={onTitleChanged}
                 />
                 <label htmlFor="postContent">Post Content:</label>
-                <textarea 
+                <textarea
                     id="postContent"
                     name="postContent"
                     value={content}

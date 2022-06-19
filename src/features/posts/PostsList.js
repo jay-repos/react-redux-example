@@ -10,17 +10,17 @@ import { selectAllPosts } from "./postsSlice"
 
 export const PostsList = () => {
     const posts = useSelector(selectAllPosts)
-    const orderedPosts =posts.slice().sort((a,b) => b.date.localeCompare(a.date))
-    const rendedposts = orderedPosts.map(post =>(
+    const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date))
+    const rendedposts = orderedPosts.map(post => (
         <article className="post-excerpt" key={post.id}>
             <h3>{post.title}</h3>
             <div>
                 <PostAuthor userId={post.user} />
                 <TimeAgo timestamp={post.date} />
             </div>
-            <p className="post-content">{post.content.substring(0,100)}</p>
+            <p className="post-content">{post.content.substring(0, 100)}</p>
             <ReactionButtons post={post} />
-            <Link to={`/posts/${post.id}`} className="button muted-button">View Post</Link>
+            <Link to={`/react-redux-example/posts/${post.id}`} className="button muted-button">View Post</Link>
 
         </article>
     ))
