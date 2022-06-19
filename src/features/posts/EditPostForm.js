@@ -25,7 +25,7 @@ export const EditPostForm = () => {
     }
 
     return (
-        <section>
+        <section className="post">
             <h2>Edit Post</h2>
             <form>
                 <label htmlFor="postTitle">Post title:</label>
