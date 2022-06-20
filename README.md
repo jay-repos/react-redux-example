@@ -49,6 +49,7 @@ npm install
 #### 3. start running
 ```
 npm run start
+(http://localhost:5000/)
 ```
 
 
